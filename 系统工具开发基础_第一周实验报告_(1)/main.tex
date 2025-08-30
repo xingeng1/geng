@@ -1,0 +1,151 @@
+\documentclass{article}
+\usepackage{graphicx} 
+\usepackage{xeCJK}
+\usepackage{color}
+
+\title{\textbf{\huge 系统工具开发基础（第一周实验报告）}}
+\author{\LARGE 耿壮}
+\date{August 2025}
+
+\begin{document}
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+\section{\LARGE 练习内容}
+\subsection{Latex分部分}
+\textbackslash{section}可以分好多大部分
+\textbackslash{subsection}在section的基础上分的更细致
+\subsection{Latex创建标题页}
+\begin{flushleft}
+\textbackslash{begin{titlepage}}\par
+\textbackslash{maketitle}\par
+\textbackslash{end{titlepage}}\par
+为创建标题页
+\end{flushleft}
+\subsection{Latex添加摘要}
+\begin{flushleft}
+\textbackslash{begin{abstract}}  \par
+\textbackslash{end{abstract}}\par
+为添加摘要
+\end{flushleft}
+\subsection{Latex使用中文}
+添加\textbackslash{usepackage\{xeCJK\}}和改为XeLaTex 编译器才能使用中文
+\subsection{Latex换行的五种办法}
+\begin{enumerate}    
+\item 文本到下一段第一种方法是添加两个回车\newline
+\item 文本到下一段第二种方法是在后面加“\textbackslash{par}”\newline
+\item 文本到下一段第三种方法是在后面加“\textbackslash\textbackslash”\newline
+\item 文本到下一段第四种方法是在后面加“\textbackslash{newline}”,但段首不缩进\newline
+\item 文本到下一段第五种方法是在后面加“\textbackslash{hfill}+\textbackslash{break}”,但段首不缩进
+\end{enumerate}
+\subsection{Latex内容换页}
+“\textbackslash{newpage}”前面加斜线后面的内容自动变到下一页
+\subsection{Latex内容对齐}
+\textbackslash{begin\{flushleft\}}\newline
+\textbackslash{end\{flushleft\}}\newline
+为放在两者内的内容变为左对齐\newline
+\textbackslash{begin\{flushright\}}\newline
+\textbackslash{end\{flushright\}}\newline
+为放在两者内的内容变为右对齐
+\subsection{Latex字体形式}
+\begin{enumerate}
+\item \textbackslash{textbf\{\}}为加粗\newline
+\item \textbackslash{underline\{\}}为加下划线\newline
+\item \textbackslash{textit\{\}}为变斜体\newline
+\item \textbackslash{textit\{\textbackslash{textbf}\{\}\}}为斜体加粗复合
+\end{enumerate}
+\subsection{Latex改变字体Method1大小（由小到大排列）}
+\begin{enumerate}
+\item \{\textbackslash{tiny Method1}\}\newline
+\item \{\textbackslash{scriptsize Method1}\}\newline
+\item \{\textbackslash{footnotesize Method1}\}\newline
+\item \{\textbackslash{small Method1}\}\newline
+\item \{\textbackslash{normalsize Method1}\}\newline
+\item \{\textbackslash{large Method1}\}\newline
+\item \{\textbackslash{Large Method1}\}\newline
+\item \{\textbackslash{LARGE Method1}\}\newline
+\item \{\textbackslash{huge Method1}\}\newline
+\item \{\textbackslash{Huge Method1}\}
+\end{enumerate}
+\subsection{Latex插入图片}
+\textbackslash{usepackage\{graphicx\}}\newline
+\textbackslash{graphicspath\{ \{./images/\} \}}\newline
+创建名为images的文件夹上传图片名为universe的图片\newline
+在插入图片的地方写\textbackslash{includegraphics\{universe\}}以插入图片
+\subsection{Latex生成表格}
+\begin{enumerate}
+\item l 表示一个左对齐的列；\newline
+\item r 表示一个右对齐的列；\newline
+\item c 表示一个向中对齐的列；\newline
+\item | 表示一个列的竖线；\newline
+\item \& 用于分割列；\newline
+\item \textbackslash\textbackslash 用于换行；\newline
+\item \textbackslash{hline} 表示插入一个贯穿所有列的横着的分割线；\newline
+\item \textbackslash{cline\{1-2\}} 会在第一列和第二列插入一个横着的分割线。\newline
+\item 开始时用\textbackslash{begin\{tabular\}}\newline
+ 结束时用\textbackslash{end\{tabular\}}
+\end{enumerate}
+\subsection{Latex插入公式}
+\begin{enumerate}
+\item 开始时用\textbackslash{begin\{equation\}}\newline
+ 结束时用\textbackslash{end\{equation\}}\newline
+\item 若碰到a，b，c等需加\&\newline
+\item \$底数\^{}指数\$为上标\newline
+\item \$底数\_指数\$为下标\newline
+\item \$\$\textbackslash{frac\{a\}\{3\}}\$\$为三分之a(可嵌套)\newline
+\item \$\$\textbackslash{sqrt[x]\{y\^{}2\}}\$\$为x次根号下y的平方\newline
+\item \$\$\textbackslash{}sum\_\{x=1\}\^{}5 y\^{}z\$\$为x从一到五y的z次方求和\newline
+\item \$\$\textbackslash{}int\_a\^{}b f(x)\$\$为从a到b f(x)的积分
+\end{enumerate}
+\subsection{git创建文件 }
+touch file.txt为创建一个名为file的文件
+\subsection{git查看日期 }
+输入date
+\subsection{git打印}
+输入echo后加要打印的东西
+\subsection{git 搜索}
+\begin{enumerate}
+\item in：name,description,readme spring为查找名称，描述或README文件中包含spring的文件按名称，描述或README搜索\newline
+\item stars:>1000为查找星标超过1000的仓库按星标数量搜索\newline
+\item forks:>500为查找复刻超过500次的仓库按复刻数量搜索\newline
+\item language:python为查找主要使用python语言的仓库按编程语言搜索\newline
+\item pushed:>2025-01-01为查找在2025年1月1日之后有更新的仓库按更新时间搜索\newline
+\end{enumerate}
+\subsection{git 在 shell 中导航}
+当前工作目录可以使用 pwd 命令来获取\newline
+切换目录需要使用 cd 命令
+\subsection{git 输入输出}
+echo hello > hello.txt将hello输入hello.txt\newline
+cat < hello.txt输出hello.txt.内的东西
+\subsection{git vim}
+\begin{enumerate}
+\item :q 退出（关闭窗口）
+\item :w 保存（写）
+\item :wq 保存然后退出
+\item :e {文件名} 打开要编辑的文件
+\item  :ls 显示打开的缓存
+\item :help {标题} 打开帮助文档
+\item :help :w 打开 :w 命令的帮助文档
+\item :help w 打开 w 移动的帮助文档
+\end{enumerate}
+\subsection{git vim编辑}
+\begin{enumerate}
+\item i 进入插入模式
+但是对于操纵/编辑文本，不单想用退格键完成
+\item O / o 在之上/之下插入行
+\item d{移动命令} 删除 {移动命令}
+例如，dw 删除词, d\$ 删除到行尾, d0 删除到行头。
+\item c{移动命令} 改变 {移动命令}
+\item x 删除字符（等同于 dl）
+\item s 替换字符（等同于 xi）
+\item u 撤销, <C-r> 重做
+\item y 复制 / “yank” （其他一些命令比如 d 也会复制）
+\item p 粘贴
+\end{enumerate}
+\section{ \LARGE 结果与感悟}
+学会了许多Latex和git的基础知识，对Latexh和git产生了浓厚兴趣，更加期待接下来的学习。
+\section{ \LARGE github链接}
+https://github.com/xingeng1/geng
+
+
+\end{document}
